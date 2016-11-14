@@ -221,7 +221,7 @@ HTML;
 
         ?>
 * {margin: 0; padding: 0;}
-body {background-color: #56708a; font-family: 'Trebuchet MS', 'Geneva CE', lucida, sans-serif; font-size: 13px;}
+body {background-color: #21252b; font-family: "Segoe UI Light","Helvetica Neue",'RobotoLight',"Segoe UI","Segoe WP",sans-serif; font-size: 13px;}
 h1, h2, h3, h4 {font-weight: normal;}
 h1 {font-size: 2em;}
 h2 {font-size: 1.5em;}
@@ -229,7 +229,9 @@ h3 {font-size: 1.2em; margin: 0.5em 0; color: #999;}
 h4 {font-size: 1.1em; margin: 0.5em 0; color: #999;}
 h1 em, h2 em {font-size: 0.9em;}
 p {line-height: 1.4; margin: 0.5em 0;}
-p.message {font-size: 15px;}
+p.message {font-size: 42px;margin:0px;line-height: 29px;color:white}
+.exceptionName{color:red;}
+.target{margin-top:20px;}
 ul, ol {margin: 0.5em 0; padding-left: 3em;}
 em {color: #777;}
 table {border-collapse: collapse;}
@@ -245,7 +247,7 @@ a:active {color: #f00;}
 
 div.section {position: relative;}
 div.section.major h2 {font-size: 2em;}
-div.group {margin: 1.5em 0; padding: 2em; background-color: #fafafa; border: 1px solid #aaa; border-radius: 10px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); zoom: 1;}
+div.group {margin: 1.5em 0; padding: 2em; border-radius: 10px zoom: 1;}
 div.group > div.section {margin-top: 1em;}
 div.group > div.section:first-of-type {margin-top: 0;}
 
@@ -453,18 +455,19 @@ var Kuria;
         $info = '';
 
         $title = Debug::getExceptionName($exception);
-        $titleTag = $isMain ? 'h1' : 'h2';
+        $titleTag = 'h4 class="exceptionName"';
 
         $message = '<p class="message">' . nl2br($this->escape($exception->getMessage()), false) . '</p>';
-        $info = "\n<p>in <em>" . $this->renderFilePath($exception->getFile()) . "</em> on line <em>" . $exception->getLine() . "</em></p>";
+        $info = "\n<p  class='target'>in <em>" . $this->renderFilePath($exception->getFile()) . "</em> on line <em>" . $exception->getLine() . "</em></p>";
 
         // title, message, file
         $html = <<<HTML
 <div class="group exception">
-<i class="icon icon-warning"></i>
 <div class="section major">
-    <{$titleTag}><em>{$number}/{$total}</em> {$title}</{$titleTag}>
+    <{$titleTag}>{$title}</{$titleTag}>
     {$message}{$info}
+    
+    
 </div>\n
 HTML;
 
