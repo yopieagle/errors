@@ -2,6 +2,7 @@ Error handler
 =============
 
 Makes handling and debugging PHP errors suck less.
+**Based on kuria/error (https://github.com/kuria/error)**
 
 
 ## Table of Contents
