@@ -1,6 +1,6 @@
 <?php
 
-namespace Kuria\Error;
+namespace Youssef\Error;
 
 /**
  * Fatal error handler interface

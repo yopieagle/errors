@@ -1,9 +1,9 @@
 <?php
 
-namespace Kuria\Error\Screen;
+namespace Youssef\Error\Screen;
 
-use Kuria\Error\FatalErrorHandlerInterface;
-use Kuria\Error\Util\Debug;
+use Youssef\Error\FatalErrorHandlerInterface;
+use Youssef\Error\Util\Debug;
 use Kuria\Event\EventEmitter;
 
 /**

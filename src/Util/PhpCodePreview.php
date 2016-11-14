@@ -1,6 +1,6 @@
 <?php
 
-namespace Kuria\Error\Util;
+namespace Youssef\Error\Util;
 
 /**
  * PHP code preview utility

@@ -1,10 +1,10 @@
 <?php
 
-namespace Kuria\Error;
+namespace Youssef\Error;
 
-use Kuria\Error\Screen\CliErrorScreen;
-use Kuria\Error\Screen\WebErrorScreen;
-use Kuria\Error\Util\Debug;
+use Youssef\Error\Screen\CliErrorScreen;
+use Youssef\Error\Screen\WebErrorScreen;
+use Youssef\Error\Util\Debug;
 use Kuria\Event\EventEmitter;
 
 /**
@@ -48,10 +48,10 @@ class ErrorHandler extends EventEmitter
 
         // make sure the some classes are loaded as autoloading may
         // be unavailable during compile-time errors, {@see onError()}
-        if (!class_exists('Kuria\Error\Util\Debug')) {
+        if (!class_exists('Youssef\Error\Util\Debug')) {
             require __DIR__ . '/Util/Debug.php';
         }
-        if (!class_exists('Kuria\Error\ContextualErrorException')) {
+        if (!class_exists('Youssef\Error\ContextualErrorException')) {
             require __DIR__ . '/ContextualErrorException.php';
         }
     }

@@ -1,11 +1,11 @@
 <?php
 
-namespace Kuria\Error\Screen;
+namespace Youssef\Error\Screen;
 
-use Kuria\Error\ContextualErrorException;
-use Kuria\Error\FatalErrorHandlerInterface;
-use Kuria\Error\Util\Debug;
-use Kuria\Error\Util\PhpCodePreview;
+use Youssef\Error\ContextualErrorException;
+use Youssef\Error\FatalErrorHandlerInterface;
+use Youssef\Error\Util\Debug;
+use Youssef\Error\Util\PhpCodePreview;
 use Kuria\Event\EventEmitter;
 
 /**
@@ -542,7 +542,7 @@ HTML;
             // call
             if (isset($frame['type'], $frame['class'])) {
                 $call = "{$frame['class']}{$frame['type']}";
-                if ('onError' === $frame['function'] && is_a($frame['class'], 'Kuria\Error\ErrorHandler', true)) {
+                if ('onError' === $frame['function'] && is_a($frame['class'], 'Youssef\Error\ErrorHandler', true)) {
                     $renderExtras = false;
                 }
             } else {

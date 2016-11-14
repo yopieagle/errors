@@ -1,6 +1,6 @@
 <?php
 
-namespace Kuria\Error;
+namespace Youssef\Error;
 
 /**
  * Contextual error exception
