@@ -221,7 +221,7 @@ HTML;
 
         ?>
 * {margin: 0; padding: 0;}
-body {background-color: #21252b; font-family: "Segoe UI Light","Helvetica Neue",'RobotoLight',"Segoe UI","Segoe WP",sans-serif; font-size: 13px;}
+body {background-color: #111; font-family: "Segoe UI Light","Helvetica Neue",'RobotoLight',"Segoe UI","Segoe WP",sans-serif; font-size: 13px;}
 h1, h2, h3, h4 {font-weight: normal;}
 h1 {font-size: 2em;}
 h2 {font-size: 1.5em;}
@@ -231,8 +231,9 @@ h1 em, h2 em {font-size: 0.9em;}
 p {line-height: 1.4; margin: 0.5em 0;}
 p.message {font-size: 42px;margin:0px;line-height: 29px;color:white}
 .exceptionName{color:red;}
-.target{margin-top:20px;}
+.target{margin-top:20px;font-size:20px;color:white;}
 ul, ol {margin: 0.5em 0; padding-left: 3em;}
+.target em {color: #eb4;}
 em {color: #777;}
 table {border-collapse: collapse;}
 td, th {padding: 0.5em 1em; border: 1px solid #ddd;}
@@ -458,12 +459,13 @@ var Kuria;
         $titleTag = 'h4 class="exceptionName"';
 
         $message = '<p class="message">' . nl2br($this->escape($exception->getMessage()), false) . '</p>';
-        $info = "\n<p  class='target'>in <em>" . $this->renderFilePath($exception->getFile()) . "</em> on line <em>" . $exception->getLine() . "</em></p>";
+        $info = "\n<p  class='target'>".$exception->getLine() . " <em>" . $this->renderFilePath($exception->getFile()) . "</em></p>";
 
         // title, message, file
         $html = <<<HTML
 <div class="group exception">
 <div class="section major">
+
     <{$titleTag}>{$title}</{$titleTag}>
     {$message}{$info}
     
